@@ -1,62 +1,46 @@
 
-# MatLight
+# MatLight 🚥
 
-MatLight = Matlab + light
-This is a library for simulating the spectrum of LED's, Laser's and more.
+Matlab + Light = MatLight
+This is a simple library for simulating the spectrum of LED's, Laser's and more.
 
-## Getting Started
+### Table of contents
+* [Getting Started](#getting-started)
+* [Prerequisites](#prerequisites)
+* [Installing](#installing)
+* [Examples](#examples)
+
+## Getting Started 
 
 These instructions will get you a copy of the project up and running on your local machine for development and testing purposes. See deployment for notes on how to deploy the project on a live system.
 
-### Prerequisites
+## Prerequisites
 
-What things you need to install the software and how to install them
+Installation of Matlab Version R2019b.
 
-```
-Give examples
-```
+## Installing
 
-### Installing
+1. Download the MatLight.
+2. Move the downloaded MatLight folder into any directory of your choice.
+3. Open Matlab and choose the MatLight directory as the current directory.
 
-A step by step series of examples that tell you how to get a development env running
+## Examples
 
-Say what the step will be
+First create a light simulation:
 
-```
-Give the example
-```
+`mySim = lightSim(1,1000,1000);`
 
-And repeat
+Create a single LED that we want to simulate with an certain certain spectral width, intensity and wavelength:
 
-```
-until finished
-```
+`led1 = led.led2(mySim, 'led1', 'W', 365, 20, 1e-3);`
 
-End with an example of getting some data out of the system or using it for a little demo
+Create a black body radiator with a specifif optical power and color temperature:
 
-## Running the tests
+`blackBody= blackBody(mySim, 'sun', 'W', 1, 6500);`
 
-Explain how to run the automated tests for this system
+Plot the spectral output of the created sources:
 
-### Break down into end to end tests
-
-Explain what these tests test and why
-
-```
-Give an example
-```
-
-### And coding style tests
-
-Explain what these tests test and why
-
-```
-Give an example
-```
-
-## Deployment
-
-Add additional notes about how to deploy this on a live system
+`led.plotAll(blackBody);`
 
 ## Built With
 
@@ -70,15 +54,3 @@ Please read [CONTRIBUTING.md](https://gist.github.com/PurpleBooth/b24679402957c6
 ## Authors
 
 * **HanSur94** - [HanSur94](https://github.com/HanSur94)
-
-See also the list of [contributors](https://github.com/your/project/contributors) who participated in this project.
-
-## License
-
-This project is licensed under the MIT License - see the [LICENSE.md](LICENSE.md) file for details
-
-## Acknowledgments
-
-* Hat tip to anyone whose code was used
-* Inspiration
-* etc
