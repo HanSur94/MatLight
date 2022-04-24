@@ -9,6 +9,8 @@ This is a simple library for simulating the spectrum of LED's, Laser's and more.
 * [Prerequisites](#prerequisites)
 * [Installing](#installing)
 * [Examples](#examples)
+* [Built With](#built-with)
+* [Authors](#authors)
 
 ## Getting Started 
 
@@ -28,28 +30,31 @@ Installation of Matlab Version R2019b.
 
 First create a light simulation:
 
-`mySim = lightSim(1,1000,1000);`
+```matlab
+mySim = lightSim(1,1000,1000);
+```
 
 Create a single LED that we want to simulate with an certain certain spectral width, intensity and wavelength:
 
-`led1 = led.led2(mySim, 'led1', 'W', 365, 20, 1e-3);`
+```matlab
+led1 = led.led2(mySim, 'led1', 'W', 365, 20, 1e-3);
+```
 
 Create a black body radiator with a specifif optical power and color temperature:
 
-`blackBody= blackBody(mySim, 'sun', 'W', 1, 6500);`
+```matlab
+blackBody= blackBody(mySim, 'sun', 'W', 1, 6500);
+```
 
 Plot the spectral output of the created sources:
 
-`led.plotAll(blackBody);`
+```matlab
+led.plotAll(blackBody);
+```
 
 ## Built With
 
 * [MATLAB](https://www.mathworks.com/products/matlab.html) - Version R2019b
-
-## Contributing
-
-Please read [CONTRIBUTING.md](https://gist.github.com/PurpleBooth/b24679402957c63ec426) for details on our code of conduct, and the process for submitting pull requests to us.
-
 
 ## Authors
 
